@@ -1,0 +1,40 @@
+@import './fonts';
+@import './colors';
+@import "~bootstrap/scss/bootstrap";
+@import '~antd/dist/antd.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        outline: transparent none 0 !important;
+        box-shadow: 0 0 0 0 rgba(0, 64, 133, 0) !important;
+        -webkit-box-shadow: none !important;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    label {
+        color: $primary-color-light !important;
+        font-size: 14px;
+    }
+
+    .ant-input {
+        border-radius: 5px;
+    }
+
+}
+
+.validation-error {
+    color: $danger-color !important;
+    font-size: 13px;
+}

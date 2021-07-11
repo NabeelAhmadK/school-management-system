@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Switch, Route, Redirect } from "react-router-dom";
+import { routes } from './route';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './assets/scss/app.scss';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+import LoginComponent from './authentication/Login';
+import ForgotPassword from './authentication/Forgot-Password';
+import App from './components/App';
+
+const Root = () => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [authenticated, setAuthenticated] = useState(false);
+
+  return (
+    <>
+      <React.StrictMode>
+        <Router basename={`/`}>
+          <Switch>
+
+            <Route path={`${process.env.PUBLIC_URL}/login`} component={LoginComponent} />
+            <Route path={`${process.env.PUBLIC_URL}/forgot-password`} component={ForgotPassword} />
+
+            {currentUser !== null || authenticated ?
+              <App>
+                {
+                  routes.map(route => {
+                    return (
+                      <Route
+                        component={route.component}
+                        path={route.path}
+                        exact={route.exact}
+                        key={route.component}
+                      />
+                    )
+                  })
+                }
+              </App>
+              :
+              <Redirect to={`${process.env.PUBLIC_URL}/login`} />
+            }
+          </Switch>
+        </Router>
+      </React.StrictMode>
+    </>
+  )
+}
+
+ReactDOM.render(<Root />,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,0 +1,48 @@
+.login-wrapper {
+    background-color: $primary-color-light;
+    color: $primary-color-dark;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    .login-box {
+        background-color: $color-white;
+        padding: 30px 50px 30px 50px;
+        width: 550px;
+        height: max-content;
+        margin: auto;
+        position: relative;
+        border-radius: 5%;
+
+        .heading {
+
+            h4 {
+                color: $primary-color-light !important;
+                font-weight: bold;
+            }
+        }
+
+        .btn-login {
+            width: 100%;
+            border-radius: 25px;
+            background-color: $primary-color-light;
+            border: 1px solid $primary-color-light;
+            padding: 10px 0 30px 0;
+            color: $color-white;
+        }
+
+        .btn-login:active,
+        .btn-login:hover {
+            background-color: $primary-color-dark;
+        }
+
+        a {
+            color: $primary-color-light;
+            text-decoration: none;
+            font-size: 15px;
+        }
+    }
+
+}
