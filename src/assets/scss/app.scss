@@ -1,4 +1,9 @@
 @import './theme';
+@import './pages/page-layout';
 
 @import './auth/login';
-@import './auth/forgot-password'
+@import './auth/forgot-password';
+@import './components/side-bar';
+@import './components/top-bar';
+
+

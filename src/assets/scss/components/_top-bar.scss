@@ -1,0 +1,10 @@
+.top-nav-bar {
+    background-color: $color-white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: $header-wrapper-padding;
+    height: 60px;
+    position: relative;
+    filter: drop-shadow(0px 1px 5px #cccccc);
+}

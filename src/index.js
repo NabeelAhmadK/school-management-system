@@ -11,7 +11,7 @@ import App from './components/App';
 
 const Root = () => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(true);
 
   return (
     <>
@@ -24,18 +24,17 @@ const Root = () => {
 
             {currentUser !== null || authenticated ?
               <App>
-                {
-                  routes.map(route => {
-                    return (
-                      <Route
-                        component={route.component}
-                        path={route.path}
-                        exact={route.exact}
-                        key={route.component}
-                      />
-                    )
-                  })
-                }
+                <Route exact path={`${process.env.PUBLIC_URL}/`} render={() => {
+                  return (<Redirect to={`${process.env.PUBLIC_URL}/app`} />)
+                }} />
+
+                {routes.map(({ path, Component }) => (
+                  <Route key={path} exact path={`${process.env.PUBLIC_URL}${path}`}>
+                    {({ match }) => (
+                      <div><Component /></div>
+                    )}
+                  </Route>
+                ))}
               </App>
               :
               <Redirect to={`${process.env.PUBLIC_URL}/login`} />
