@@ -1,7 +1,11 @@
-.page-body {
-    min-height: calc(100vh - 60px);
-    margin-top: 0px;
-    margin-left: 280px;
-    background-color: #f3f3f3;
-    padding: 10px;
+.page-body-wrapper {
+
+    .page-body {
+        min-height: calc(100vh - 60px);
+        margin-top: 0px;
+        margin-left: 280px;
+        background-color: #f3f3f3;
+        padding: 10px;
+    }
+
 }
