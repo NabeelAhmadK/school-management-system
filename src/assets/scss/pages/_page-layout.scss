@@ -6,6 +6,11 @@
         margin-left: 250px;
         background-color: #f3f3f3;
         padding: 25px;
+        transition: 600ms ease;
+    }
+
+    .side-bar-collapsed {
+        margin-left: 70px;
     }
 
 }

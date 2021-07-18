@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Switch, Route, Redirect } from "react-router-dom";
 import { routes } from './route';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import 'boxicons'
 import './assets/scss/app.scss';
 
 import LoginComponent from './authentication/Login';
