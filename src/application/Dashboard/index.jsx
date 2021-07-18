@@ -10,12 +10,12 @@ const Dashboard = props => {
 
     return (
         <>
-            <div className="dashboard-title-text mb-5">
+            <div className="dashboard-title-text">
                 <h5>Hello <span className="text-danger">{userData.first_name}</span>, Welcome Back</h5>
                 <p className="text-muted">Very detailed & featured admin </p>
             </div>
 
-            <div className="row">
+            <div className="row dashboard-tiles">
                 <div className="col-md-3">
                     <Tiles
                         counters="75"
